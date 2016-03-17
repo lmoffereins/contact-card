@@ -1,0 +1,224 @@
+/**
+ * Styles for inserting a Contact Card in the WP editor
+ *
+ * @package Contact Card
+ */
+.button.insert-contact-card {
+	padding-left: 4px;
+	padding-right: 6px;
+}
+
+.button.insert-contact-card .wp-media-buttons-icon {
+	margin-top: -1px;
+}
+
+@media screen and (max-width: 782px) {
+	#wp-content-media-buttons .button.insert-contact-card {
+		padding-left: 7px;
+		padding-right: 4px;
+	}
+
+	/* Disable WP's strange overwrites in wp-admin/css/edit.php#L1505 */
+	.button.insert-contact-card .wp-media-buttons-icon {
+		margin-top: 1px !important;
+		margin-left: 2px !important;
+	}
+}
+
+/** Insert Window *******************************************************/
+
+body.contact-card-modal #TB_title {
+	float: left;
+	height: 1px;
+	margin-top: -2px;
+}
+
+body.contact-card-modal #TB_ajaxWindowTitle {
+	display: none;
+}
+
+body.contact-card-modal .tb-close-icon {
+	left: auto;
+	right: -30px;
+	color: #eee;
+	-webkit-transition: color .1s ease-in-out, background .1s ease-in-out;
+	transition: color .1s ease-in-out, background .1s ease-in-out;
+}
+
+body.contact-card-modal #TB_closeWindowButton:focus,
+body.contact-card-modal #TB_closeWindowButton:focus .tb-close-icon,
+body.contact-card-modal .tb-close-icon:focus,
+body.contact-card-modal .tb-close-icon:hover {
+	color: #00a0d2;
+	outline: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+
+body.contact-card-modal .tb-close-icon:before {
+	content: "\f335";
+	font-size: 32px;
+}
+
+/* move plugin install close icon to top on narrow screens */
+@media screen and ( max-width: 830px ) {
+	body.contact-card-modal .tb-close-icon {
+		right: 0;
+		top: -30px;
+	}
+}
+
+body.contact-card-modal #TB_ajaxContent {
+	height: calc( 100% - 59px ) !important;
+	padding: 0;
+	font-size: 14px;
+	line-height: 1.7;
+}
+
+#contact-card-modal:before {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    left: 35%;
+    display: block;
+    background-color: #f3f3f3;
+    border-left: 1px solid #ddd;
+    z-index: -1;
+}
+
+#contact-card-modal .modal-header {
+	padding: 0 16px;
+	background: #fcfcfc;
+	border-bottom: 1px solid #ddd;
+}
+
+#contact-card-modal .modal-footer {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	height: 28px;
+	padding: 15px 16px;
+	background: #f3f3f3;
+	border-top: 1px solid #ddd;
+}
+
+#contact-card-modal .modal-title {
+	font-size: 22px;
+	line-height: 50px;
+	font-weight: bold;
+}
+
+#contact-card-modal .modal-description {
+	padding: 1em 16px;
+	background-color: #fff;
+	border-bottom: 1px solid #ddd;
+}
+
+#contact-card-modal .modal-description p {
+	padding: 0;
+	margin: 0;
+	font-size: 14px;
+}
+
+#contact-card-modal fieldset * {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+#contact-card-modal .contact-card-section,
+#contact-card-modal .contact-card-attribute {
+	float: left;
+	width: 100%;
+}
+
+#contact-card-modal .section-header {
+	padding: 10px 16px;
+	font-weight: bold;
+}
+
+#contact-card-modal .contact-card-attribute .label {
+	float: left;
+	width: 35%;
+	display: block;
+	padding: 10px 16px;
+}
+
+#contact-card-modal .contact-card-attribute .field {
+	float: left;
+	width: 65%;
+	padding: 10px 16px;
+}
+
+#contact-card-modal .contact-card-attribute .field input:not([type="checkbox"]):not([type="radio"]),
+#contact-card-modal .contact-card-attribute .field textarea,
+#contact-card-modal .contact-card-attribute .field select {
+	width: 100%;
+}
+
+#contact-card-modal .contact-card-attribute.field-checkbox_text input[type="checkbox"] + input[type="text"] {
+	width: calc( 100% - 16px - 10px );
+}
+
+#contact-card-modal .contact-card-attribute .field .description {
+	display: block;
+	margin-top: 5px;
+}
+
+#contact-card-modal #contact-card-submit {
+	float: right;
+}
+
+.ac_results.contact-card-user-suggest {
+	border-color: #ddd;
+	border-top-width: 0;
+	box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.2);
+	z-index: 100051; /* Above #TB_window */
+}
+
+	.ac_results.contact-card-user-suggest li {
+		font-size: 14px;
+		margin: 0;
+		padding: 5px;
+		color: #32373c; /* WP's input color */
+	}
+
+		.ac_results.contact-card-user-suggest .ac_match {
+			text-decoration: none;
+			border-bottom: 1px solid #32373c;
+			color: #32373c;
+		}
+
+/* Larger interactive elements */
+@media screen and ( max-width: 782px ) {
+	#contact-card-modal .modal-footer {
+		padding: 12px 16px 0;
+		height: 46px;
+	}
+
+	#contact-card-modal .contact-card-attribute.field-checkbox_text input[type="checkbox"] + input[type="text"] {
+		width: calc( 100% - 25px - 10px );
+	}
+
+	.ac_results.contact-card-user-suggest li {
+		font-size: 16px;
+		padding: 6px 10px;
+	}
+}
+
+@media screen and ( max-width: 600px ) {
+	#contact-card-modal:before {
+		display: none;
+	}
+
+	#contact-card-modal .contact-card-attribute .label {
+		width: 100%;
+		margin-bottom: 10px;
+	}
+
+	#contact-card-modal .contact-card-attribute .field {
+		width: 100%;
+	}
+}

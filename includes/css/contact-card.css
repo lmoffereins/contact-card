@@ -1,0 +1,61 @@
+/**
+ * Contact Card styles
+ *
+ * @package Contact Card
+ */
+.contact-card {
+  position: relative;
+  display: block;
+  width: 100%;
+  max-width: 438px;
+  /* arbitrary */
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0 auto 1.5em;
+}
+.contact-card * {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  font-weight: normal;
+  font-size: 1rem;
+  text-decoration: none;
+  border: none;
+}
+.contact-card .contact-body {
+  padding: .725rem 1.25rem;
+  border: 1px solid #e1e8ed;
+  border-radius: 4px;
+}
+.contact-card .avatar {
+  float: right;
+  margin: calc(-1.725rem) calc(-2.25rem) 1.25rem 1.25rem;
+  border-radius: 0 4px 0 0;
+}
+.contact-card.avatar-left .avatar {
+  float: left;
+  margin: calc(-1.725rem) 1.25rem 1.25rem calc(-2.25rem);
+  border-radius: 4px 0 0 0;
+}
+.contact-card .contact-title {
+  display: inline;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+.contact-card .contact-sub-title {
+  display: block;
+  font-weight: lighter;
+  font-style: italic;
+  color: #999;
+}
+.contact-card .contact-details {
+  margin-top: 1.3rem;
+}
+.contact-card .contact-details dt {
+  float: left;
+  width: 23%;
+}
+.contact-card .contact-details dd {
+  margin-left: 23%;
+}
+/*# sourceMappingURL=contact-card.css.map */
